@@ -110,3 +110,18 @@ test('correct headers after initialization with custom headers', function (t) {
 
 	t.end();
 });
+
+test('promise returned by all methods', function (t) {
+	var client = new PostcodesIO();
+
+	t.equal(typeof client.lookup('EC1V 9LB').then, 'function');
+	t.equal(typeof client.near('EC1V 9LB').then, 'function');
+	t.equal(typeof client.near(51.6562, -1.0699).then, 'function');
+	t.equal(typeof client.nearCoordinate(51.6562, -1.0699).then, 'function');
+	t.equal(typeof client.nearPostcode('EC1V 9LB').then, 'function');
+	t.equal(typeof client.reverseGeocode(51.6562, -1.0699).then, 'function');
+	t.equal(typeof client.validate('EC1V 9LB').then, 'function');
+	t.equal(typeof client.random().then, 'function');
+
+	t.end();
+});
