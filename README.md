@@ -154,8 +154,8 @@ This may also be called explicitly as `postcodes.nearestToCoordinate`.
 
 Parameters:
 
-- `latitude` - float - the latitude of the coordinate
-- `longitude` - float - the longitude of the coordinate
+- `latitude` - number - the latitude of the coordinate
+- `longitude` - number - the longitude of the coordinate
 
 Outputs:
 
@@ -191,8 +191,8 @@ postcodes.reverseGeocode(latitude, longitude)
 
 Parameters:
 
-- `latitude` - float - the latitude of the coordinate
-- `longitude` - float - the longitude of the coordinate
+- `latitude` - number - the latitude of the coordinate
+- `longitude` - number - the longitude of the coordinate
 
 Outputs:
 
