@@ -3,9 +3,9 @@
 Abstracts access to the [`postcodes.io`](//postcodes.io) API. Supports both
 callbacks and [Promises/A+](//promisesaplus.com).
 
-[![NPM Version](https://img.shields.io/npm/v/postcodesio-client-node.svg?style=flat)](//www.npmjs.org/package/postcodesio-client-node)
-[![Build Status](https://img.shields.io/travis/billinghamj/postcodesio-client-node.svg?style=flat)](//travis-ci.org/billinghamj/postcodesio-client-node)
-[![Coverage Status](https://img.shields.io/coveralls/billinghamj/postcodesio-client-node.svg?style=flat)](//coveralls.io/r/billinghamj/postcodesio-client-node)
+[![NPM Version](https://img.shields.io/npm/v/postcodesio-client.svg?style=flat)](//www.npmjs.org/package/postcodesio-client)
+[![Build Status](https://img.shields.io/travis/cuvva/postcodesio-client-node.svg?style=flat)](//travis-ci.org/cuvva/postcodesio-client-node)
+[![Coverage Status](https://img.shields.io/coveralls/cuvva/postcodesio-client-node.svg?style=flat)](//coveralls.io/r/cuvva/postcodesio-client-node)
 
 ```js
 var PostcodesIO = require('postcodesio-client');
