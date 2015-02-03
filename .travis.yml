@@ -5,6 +5,7 @@ after_script: npm install coveralls@2.10.0 && cat ./coverage/lcov.info | coveral
 notifications:
   email: false
   slack:
-    secure: fOlTK5hKs3Cv3wJCn85tCQEjsZIhz6FRlf/mNR41Hp3g8ljPvJO9Ls67t1tV2gOVwNbzTd5NUTfK4qmWhYyYmvkzTG1j6IJXJ/zkz2CvvoiCZu/7ECHFGeyvvCKjrhETrkTs6eYjPBIAGBL6qNGD9Bv9gUlDjQyx2Yv45e+n2pI=
+    rooms:
+      - secure: fOlTK5hKs3Cv3wJCn85tCQEjsZIhz6FRlf/mNR41Hp3g8ljPvJO9Ls67t1tV2gOVwNbzTd5NUTfK4qmWhYyYmvkzTG1j6IJXJ/zkz2CvvoiCZu/7ECHFGeyvvCKjrhETrkTs6eYjPBIAGBL6qNGD9Bv9gUlDjQyx2Yv45e+n2pI=
     on_success: always
     on_failure: always
