@@ -1,0 +1,42 @@
+{
+	"name": "postcodesio-client",
+	"version": "0.1.0",
+	"description": "Abstracts access to the https://postcodes.io API.",
+	"homepage": "https://github.com/cuvva/postcodesio-client-node",
+	"bugs": "https://github.com/cuvva/postcodesio-client-node/issues",
+
+	"license": "MIT",
+	"author": "James Billingham <james@jamesbillingham.com> (http://jamesbillingham.com)",
+
+	"main": "lib/index.js",
+
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/billinghamj/postcodesio-client-node.git"
+	},
+
+	"scripts": {
+		"test": "tape test/*.js",
+		"test-travis": "istanbul cover test/*.js --report lcovonly"
+	},
+
+	"dependencies": {
+		"object-merge": "^2.5.1",
+		"q": "^1.1.2"
+	},
+
+	"devDependencies": {
+		"tape": "^3.5.0",
+		"istanbul": "^0.3.5"
+	},
+
+	"keywords": [
+		"uk",
+		"address",
+		"postcode",
+		"api",
+		"postcodes",
+		"io",
+		"client"
+	]
+}
