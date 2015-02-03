@@ -1,6 +1,6 @@
 {
 	"name": "postcodesio-client",
-	"version": "0.1.0",
+	"version": "0.1.1",
 	"description": "Abstracts access to the https://postcodes.io API.",
 	"homepage": "https://github.com/cuvva/postcodesio-client-node",
 	"bugs": "https://github.com/cuvva/postcodesio-client-node/issues",
@@ -12,7 +12,7 @@
 
 	"repository": {
 		"type": "git",
-		"url": "https://github.com/billinghamj/postcodesio-client-node.git"
+		"url": "https://github.com/cuvva/postcodesio-client-node.git"
 	},
 
 	"scripts": {
