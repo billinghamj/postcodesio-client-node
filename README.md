@@ -142,15 +142,15 @@ Outputs:
 
 - `postcode` - [Postcode](#postcode) - the resulting postcode data
 
-### Nearest to Coordinate
+### Near Coordinate
 
 Find postcodes closest to a coordinate.
 
 ```js
-postcodes.nearest(latitude, longitude)
+postcodes.near(latitude, longitude)
 ```
 
-This may also be called explicitly as `postcodes.nearestToCoordinate`.
+This may also be called explicitly as `postcodes.nearCoordinate`.
 
 Parameters:
 
@@ -159,19 +159,19 @@ Parameters:
 
 Outputs:
 
-- `postcodes` - array of [Postcode](#postcode) - the nearest postcodes
+- `postcodes` - array of [Postcode](#postcode) - the nearby postcodes
 
-### Nearest to Postcode
+### Near Postcode
 
 Find the postcodes closest to another postcode.
 
 Warning: results may include the original postcode.
 
 ```js
-postcodes.nearest(postcode)
+postcodes.near(postcode)
 ```
 
-This may also be called explicitly as `postcodes.nearestToPostcode`.
+This may also be called explicitly as `postcodes.nearPostcode`.
 
 Parameters:
 
@@ -179,7 +179,7 @@ Parameters:
 
 Outputs:
 
-- `postcodes` - array of [Postcode](#postcode) - the nearest postcodes
+- `postcodes` - array of [Postcode](#postcode) - the nearby postcodes
 
 ### Reverse Geocode
 
@@ -196,7 +196,7 @@ Parameters:
 
 Outputs:
 
-- `postcode` - [Postcode](#postcode) - the nearest postcode
+- `postcode` - [Postcode](#postcode) - the nearby postcode
 
 ### Validate
 
