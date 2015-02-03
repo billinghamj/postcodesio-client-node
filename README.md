@@ -71,6 +71,19 @@ postcodes.lookup('EC1V 9LB', function (error, postcode) {
 });
 ```
 
+Not found (404) responses from the API are not considered errors. Instead, the
+output will be `null`.
+
+```js
+postcodes.lookup('F4K3AA', function (error, postcode) {
+	console.log(error);
+	// null
+
+	console.log(postcode);
+	// null
+});
+```
+
 Both promises ([Promises/A+](//promisesaplus.com)) and callbacks are supported.
 The following two sections specify exactly how you can apply promises or
 callbacks to the reference below.
