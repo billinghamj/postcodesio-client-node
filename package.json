@@ -16,8 +16,8 @@
 	},
 
 	"scripts": {
-		"test": "tape test/*.js",
-		"test-travis": "istanbul cover test/*.js --report lcovonly"
+		"test": "tape test/index.js",
+		"test-travis": "istanbul cover test/index.js --report lcovonly"
 	},
 
 	"dependencies": {
