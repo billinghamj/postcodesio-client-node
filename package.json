@@ -26,8 +26,8 @@
 	},
 
 	"devDependencies": {
-		"tape": "^3.5.0",
-		"istanbul": "^0.3.5"
+		"istanbul": "^0.3.5",
+		"tape": "^4.0.0"
 	},
 
 	"keywords": [
