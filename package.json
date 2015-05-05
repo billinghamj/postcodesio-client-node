@@ -1,42 +1,35 @@
 {
-	"name": "postcodesio-client",
-	"version": "0.1.1",
-	"description": "Abstracts access to the Postcodes.io API",
-	"homepage": "https://github.com/cuvva/postcodesio-client-node",
-	"bugs": "https://github.com/cuvva/postcodesio-client-node/issues",
-
-	"license": "MIT",
-	"author": "James Billingham <james@jamesbillingham.com> (http://jamesbillingham.com)",
-
-	"main": "lib/index.js",
-
-	"repository": {
-		"type": "git",
-		"url": "https://github.com/cuvva/postcodesio-client-node.git"
-	},
-
-	"scripts": {
-		"test": "tape test/index.js",
-		"test-travis": "istanbul cover test/index.js --report lcovonly"
-	},
-
-	"dependencies": {
-		"object-merge": "^2.5.1",
-		"q": "^1.1.2"
-	},
-
-	"devDependencies": {
-		"istanbul": "^0.3.5",
-		"tape": "^4.0.0"
-	},
-
-	"keywords": [
-		"uk",
-		"address",
-		"postcode",
-		"api",
-		"postcodes",
-		"io",
-		"client"
-	]
+  "name": "postcodesio-client",
+  "version": "0.1.2",
+  "description": "Abstracts access to the Postcodes.io API",
+  "homepage": "https://github.com/cuvva/postcodesio-client-node",
+  "bugs": "https://github.com/cuvva/postcodesio-client-node/issues",
+  "license": "MIT",
+  "author": "James Billingham <james@jamesbillingham.com> (http://jamesbillingham.com)",
+  "main": "lib/index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/cuvva/postcodesio-client-node.git"
+  },
+  "scripts": {
+    "test": "tape test/index.js",
+    "test-travis": "istanbul cover test/index.js --report lcovonly"
+  },
+  "dependencies": {
+    "object-merge": "^2.5.1",
+    "q": "^1.1.2"
+  },
+  "devDependencies": {
+    "istanbul": "^0.3.5",
+    "tape": "^4.0.0"
+  },
+  "keywords": [
+    "uk",
+    "address",
+    "postcode",
+    "api",
+    "postcodes",
+    "io",
+    "client"
+  ]
 }
