@@ -150,12 +150,13 @@ Find postcodes closest to a coordinate.
 postcodes.near(latitude, longitude)
 ```
 
-This may also be called explicitly as `postcodes.nearCoordinate`.
+This may also be called explicitly as `postcodes.nearCoordinate(latitude, longitude, options)`.
 
 Parameters:
 
 - `latitude` - number - the latitude of the coordinate
 - `longitude` - number - the longitude of the coordinate
+- `options` - object - optional, only available with an explicit call
 
 Outputs:
 
@@ -171,7 +172,7 @@ Warning: results may include the original postcode.
 postcodes.near(postcode)
 ```
 
-This may also be called explicitly as `postcodes.nearPostcode`.
+This may also be called explicitly as `postcodes.nearPostcode(postcode)`.
 
 Parameters:
 
