@@ -1,11 +1,11 @@
 language: node_js
 script: npm run-script test-travis
-after_script: npm install coveralls@2.10.0 && cat ./coverage/lcov.info | coveralls
+after_script: cat ./coverage/lcov.info | coveralls
 
 notifications:
   email: false
   slack:
     rooms:
-      - secure: fOlTK5hKs3Cv3wJCn85tCQEjsZIhz6FRlf/mNR41Hp3g8ljPvJO9Ls67t1tV2gOVwNbzTd5NUTfK4qmWhYyYmvkzTG1j6IJXJ/zkz2CvvoiCZu/7ECHFGeyvvCKjrhETrkTs6eYjPBIAGBL6qNGD9Bv9gUlDjQyx2Yv45e+n2pI=
+      - secure: Il+TTS4jB8nFoxiEddQ7AEGC6h0wNKsaTQU2WixaxU58zmh7jYQg1nq9orrlzwDFXmUabBKJA6e+hhiJ47cOcLCDb5sb4Hp34YwKxZ3CICKsbPOxHvkjz+zEUU/46ZJbojfPfhj8bb8+e40XSaivv1ZiRiR3uuri24u5fV6VEVo=
     on_success: always
     on_failure: always
