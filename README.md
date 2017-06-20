@@ -142,6 +142,22 @@ Outputs:
 
 - `postcode` - [Postcode](#postcode) - the resulting postcode data
 
+### Outcode 
+
+Get lots of data for an outcode.
+
+```js
+postcodes.outcode(outcode)
+```
+
+Parameters:
+
+- `outcode` - string - the outcode to retrieve
+
+Outputs:
+
+- `outcode` - [Outcode](#outcode-1) - the resulting outcode data
+
 ### Near Coordinate
 
 Find postcodes closest to a coordinate.
@@ -259,6 +275,36 @@ Example:
 	"incode": "9LB",
 	"outcode": "EC1V",
 	"ccg": "NHS Islington"
+}
+```
+
+### Outcode
+
+Example:
+
+```json
+{
+    "outcode": "EC1V",
+    "longitude": -0.0981811622126924,
+    "latitude": 51.5266761246198,
+    "northings": 182576,
+    "eastings": 532028,
+    "admin_district": [
+        "Hackney",
+        "Islington"
+    ],
+    "parish": [
+        "Islington, unparished area",
+        "Hackney, unparished area"
+    ],
+    "admin_county": [],
+    "admin_ward": [
+        "Hoxton West",
+        "Clerkenwell",
+        "Bunhill",
+        "Hoxton East & Shoreditch",
+        "St Peter's"
+    ]
 }
 ```
 
