@@ -4,7 +4,8 @@ var PostcodesIO = require('../lib');
 test('correct types exported', function (t) {
 	t.equal(typeof PostcodesIO, 'function');
 	t.equal(typeof PostcodesIO.prototype.lookup, 'function');
-	t.equal(typeof PostcodesIO.prototype.outcode, 'function');
+	t.equal(typeof PostcodesIO.prototype.lookupOutcode, 'function');
+	t.equal(typeof PostcodesIO.prototype.lookupPostcode, 'function');
 	t.equal(typeof PostcodesIO.prototype.near, 'function');
 	t.equal(typeof PostcodesIO.prototype.nearCoordinate, 'function');
 	t.equal(typeof PostcodesIO.prototype.nearPostcode, 'function');
@@ -20,7 +21,8 @@ test('correct types after initialization', function (t) {
 
 	t.assert(client instanceof PostcodesIO);
 	t.equal(typeof client.lookup, 'function');
-	t.equal(typeof client.outcode, 'function');
+	t.equal(typeof client.lookupPostcode, 'function');
+	t.equal(typeof client.lookupOutcode, 'function');
 	t.equal(typeof client.near, 'function');
 	t.equal(typeof client.nearCoordinate, 'function');
 	t.equal(typeof client.nearPostcode, 'function');
@@ -36,7 +38,8 @@ test('correct types after calling as function', function (t) {
 
 	t.assert(client instanceof PostcodesIO);
 	t.equal(typeof client.lookup, 'function');
-	t.equal(typeof client.outcode, 'function');
+	t.equal(typeof client.lookupPostcode, 'function');
+	t.equal(typeof client.lookupOutcode, 'function');
 	t.equal(typeof client.near, 'function');
 	t.equal(typeof client.nearCoordinate, 'function');
 	t.equal(typeof client.nearPostcode, 'function');
@@ -118,7 +121,9 @@ test('promise returned by all methods', function (t) {
 	var client = new PostcodesIO();
 
 	t.equal(typeof client.lookup('EC1V 9LB').then, 'function');
-	t.equal(typeof client.outcode('EC1V').then, 'function');
+	t.equal(typeof client.lookup('EC1V').then, 'function');
+	t.equal(typeof client.lookupPostcode('EC1V 9LB').then, 'function');
+	t.equal(typeof client.lookupOutcode('EC1V').then, 'function');
 	t.equal(typeof client.near('EC1V 9LB').then, 'function');
 	t.equal(typeof client.near(51.6562, -1.0699).then, 'function');
 	t.equal(typeof client.nearCoordinate(51.6562, -1.0699).then, 'function');
