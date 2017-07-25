@@ -162,7 +162,7 @@ Parameters:
 
 Outputs:
 
-- `data` - array of [Postcode](#postcode) - the nearby postcodes
+- `postcodes` - array of [Postcode](#postcode) - the nearby postcodes
 
 ### Near Postcode
 
@@ -182,7 +182,7 @@ Parameters:
 
 Outputs:
 
-- `data` - array of [Postcode](#postcode) - the nearby postcodes
+- `postcodes` - array of [Postcode](#postcode) - the nearby postcodes
 
 ### Reverse Geocode
 
@@ -199,7 +199,7 @@ Parameters:
 
 Outputs:
 
-- `data` - [Postcode](#postcode) - the nearby postcode
+- `postcode` - [Postcode](#postcode) - the nearby postcode
 
 ### Validate
 
@@ -229,7 +229,7 @@ postcodes.random()
 
 Outputs:
 
-- `data` - [Postcode](#postcode) - a random postcode
+- `postcode` - [Postcode](#postcode) - a random postcode
 
 ## Types
 
@@ -269,33 +269,30 @@ Example:
 
 ```json
 {
-    "status": 200,
-    "result": {
-        "outcode": "EC1V",
-        "longitude": -0.0981811622126924,
-        "latitude": 51.5266761246198,
-        "northings": 182576,
-        "eastings": 532028,
-        "admin_district": [
-            "Hackney",
-            "Islington"
-        ],
-        "parish": [
-            "Hackney, unparished area",
-            "Islington, unparished area"
-        ],
-        "admin_county": [],
-        "admin_ward": [
-            "Bunhill",
-            "Hoxton West",
-            "Clerkenwell",
-            "Hoxton East & Shoreditch",
-            "St Peter's"
-        ],
-        "country": [
-            "England"
-        ]
-    }
+    "outcode": "EC1V",
+    "longitude": -0.0981811622126924,
+    "latitude": 51.5266761246198,
+    "northings": 182576,
+    "eastings": 532028,
+    "admin_district": [
+        "Hackney",
+        "Islington"
+    ],
+    "parish": [
+        "Hackney, unparished area",
+        "Islington, unparished area"
+    ],
+    "admin_county": [],
+    "admin_ward": [
+        "Bunhill",
+        "Hoxton West",
+        "Clerkenwell",
+        "Hoxton East & Shoreditch",
+        "St Peter's"
+    ],
+    "country": [
+        "England"
+    ]
 }
 ```
 
