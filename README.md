@@ -128,19 +128,21 @@ specified for each method.
 
 ### Lookup
 
-Get lots of data for a postcode.
+Get lots of data for a postcode or outcode.
 
 ```js
-postcodes.lookup(postcode)
+postcodes.lookup(code)
 ```
 
 Parameters:
 
-- `postcode` - string - the postcode to retrieve
+- `code` - string - the postcode or outcode to retrieve
 
 Outputs:
 
-- `postcode` - [Postcode](#postcode) - the resulting postcode data
+- `data` - [Postcode](#postcode) or [Outcode](#outcode) - the resulting postcode/outcode data
+
+This may also be called explicitly as `postcodes.lookupPostcode(postcode)` or `postcodes.lookupOutcode(outcode)`.
 
 ### Near Coordinate
 
@@ -259,6 +261,38 @@ Example:
 	"incode": "9LB",
 	"outcode": "EC1V",
 	"ccg": "NHS Islington"
+}
+```
+### Outcode
+
+Example:
+
+```json
+{
+    "outcode": "EC1V",
+    "longitude": -0.0981811622126924,
+    "latitude": 51.5266761246198,
+    "northings": 182576,
+    "eastings": 532028,
+    "admin_district": [
+        "Hackney",
+        "Islington"
+    ],
+    "parish": [
+        "Hackney, unparished area",
+        "Islington, unparished area"
+    ],
+    "admin_county": [],
+    "admin_ward": [
+        "Bunhill",
+        "Hoxton West",
+        "Clerkenwell",
+        "Hoxton East & Shoreditch",
+        "St Peter's"
+    ],
+    "country": [
+        "England"
+    ]
 }
 ```
 
