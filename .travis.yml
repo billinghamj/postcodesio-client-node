@@ -1,4 +1,8 @@
 language: node_js
+node_js:
+  - 6
+  - 8
+  - 9
 script: npm run-script test-travis
 after_script: cat ./coverage/lcov.info | coveralls
 
