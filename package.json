@@ -16,6 +16,7 @@
     "test-travis": "istanbul cover test/index.js --report lcovonly"
   },
   "dependencies": {
+    "json-client": "^0.8.4",
     "postcode": "^0.2.5"
   },
   "devDependencies": {
