@@ -33,54 +33,6 @@ test('correct types after initialization', t => {
 	t.end();
 });
 
-test('default options set after initialization', t => {
-	const client = new PostcodesIO();
-
-	t.notEqual(client.options, null);
-	t.equal(client.options.secure, true);
-	t.equal(client.options.hostname, 'api.postcodes.io');
-	t.equal(client.options.port, '443');
-	t.deepEqual(client.options.headers, { accept: 'application/json' });
-
-	t.end();
-});
-
-test('with custom base URL', t => {
-	const client = new PostcodesIO('http://example.com:8246');
-
-	t.notEqual(client.options, null);
-	t.deepEqual(client.options, {
-		secure: false,
-		hostname: 'example.com',
-		port: '8246',
-		headers: { accept: 'application/json' },
-	});
-
-	t.end();
-});
-
-test('correct headers after initialization with custom headers', t => {
-	const opts = {
-		headers: { authorization: 'Bearer foobar' },
-	};
-
-	const client = new PostcodesIO(null, opts);
-
-	t.notEqual(client.options, null);
-
-	t.deepEqual(client.options, {
-		secure: true,
-		hostname: 'api.postcodes.io',
-		port: '443',
-		headers: {
-			accept: 'application/json',
-			authorization: 'Bearer foobar',
-		},
-	});
-
-	t.end();
-});
-
 test('promise returned by all methods', t => {
 	const client = new PostcodesIO();
 
