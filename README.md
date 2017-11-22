@@ -38,10 +38,7 @@ Create an instance of the client, providing options if you wish:
 ```js
 var PostcodesIO = require('postcodesio-client');
 
-var postcodes = new PostcodesIO({
-	secure: true, // default shown - indicates whether to make a TLS connection
-	hostname: 'api.postcodes.io', // default shown - allows overriding API server
-	port: 443, // default shown - allows overriding API server port
+var postcodes = new PostcodesIO('https://api.postcodes.io', {
 	headers: { 'User-Agent': 'MyAwesomeApp/1.0.0' } // default {} - extra headers
 });
 ```

@@ -56,46 +56,22 @@ test('default options set after initialization', function (t) {
 	t.notEqual(client.options, null);
 	t.equal(client.options.secure, true);
 	t.equal(client.options.hostname, 'api.postcodes.io');
-	t.equal(client.options.port, 443);
+	t.equal(client.options.port, '443');
 	t.deepEqual(client.options.headers, { 'Accept': 'application/json' });
 
 	t.end();
 });
 
-test('options overridden after initialization with options', function (t) {
-	var opts = {
+test('with custom base URL', function(t) {
+	var client = new PostcodesIO('http://example.com:8246');
+
+	t.notEqual(client.options, null);
+	t.deepEqual(client.options, {
 		secure: false,
 		hostname: 'example.com',
-		port: 8246,
-		headers: { 'Accept': 'text/xml' }
-	};
-
-	var client = new PostcodesIO(opts);
-
-	t.notEqual(client.options, null);
-	t.deepEqual(client.options, opts);
-
-	t.end();
-});
-
-test('correct options after initialization with secure as false', function (t) {
-	var client = new PostcodesIO({ secure: false });
-
-	t.notEqual(client.options, null);
-	t.equal(client.options.secure, false);
-	t.equal(client.options.hostname, 'api.postcodes.io');
-	t.equal(client.options.port, 80);
-
-	t.end();
-});
-
-test('correct options after initialization with secure as true', function (t) {
-	var client = new PostcodesIO({ secure: true });
-
-	t.notEqual(client.options, null);
-	t.equal(client.options.secure, true);
-	t.equal(client.options.hostname, 'api.postcodes.io');
-	t.equal(client.options.port, 443);
+		port: '8246',
+		headers: { Accept: 'application/json' },
+	});
 
 	t.end();
 });
@@ -105,13 +81,18 @@ test('correct headers after initialization with custom headers', function (t) {
 		headers: { 'Authorization': 'Bearer foobar' }
 	};
 
-	var client = new PostcodesIO(opts);
+	var client = new PostcodesIO(null, opts);
 
 	t.notEqual(client.options, null);
 
-	t.deepEqual(client.options.headers, {
-		'Accept': 'application/json',
-		'Authorization': 'Bearer foobar'
+	t.deepEqual(client.options, {
+		secure: true,
+		hostname: 'api.postcodes.io',
+		port: '443',
+		headers: {
+			Accept: 'application/json',
+			Authorization: 'Bearer foobar',
+		},
 	});
 
 	t.end();
