@@ -1,7 +1,6 @@
 # postcodes.io client
 
-Abstracts access to the [`postcodes.io`](//postcodes.io) API. Supports both
-callbacks and [Promises/A+](//promisesaplus.com).
+Abstracts access to the [`postcodes.io`](//postcodes.io) API.
 
 [![NPM Version](https://img.shields.io/npm/v/postcodesio-client.svg?style=flat)](//www.npmjs.org/package/postcodesio-client)
 [![Build Status](https://img.shields.io/travis/cuvva/postcodesio-client-node.svg?style=flat)](//travis-ci.org/cuvva/postcodesio-client-node)
@@ -11,7 +10,7 @@ callbacks and [Promises/A+](//promisesaplus.com).
 var PostcodesIO = require('postcodesio-client');
 var postcodes = new PostcodesIO();
 
-postcodes.lookup('EC1V 9LB', function (err, postcode) {
+postcodes.lookup('EC1V 9LB').then(postcode => {
 	console.log(postcode);
 
 	// {
@@ -38,15 +37,12 @@ Create an instance of the client, providing options if you wish:
 ```js
 var PostcodesIO = require('postcodesio-client');
 
-var postcodes = new PostcodesIO({
-	secure: true, // default shown - indicates whether to make a TLS connection
-	hostname: 'api.postcodes.io', // default shown - allows overriding API server
-	port: 443, // default shown - allows overriding API server port
+var postcodes = new PostcodesIO('https://api.postcodes.io', {
 	headers: { 'User-Agent': 'MyAwesomeApp/1.0.0' } // default {} - extra headers
 });
 ```
 
-Use promises!
+Make requests using Promises:
 
 ```js
 postcodes
@@ -58,35 +54,19 @@ postcodes
 	});
 ```
 
-Or good old fashioned callbacks:
-
-```js
-postcodes.lookup('EC1V 9LB', function (error, postcode) {
-	if (error) {
-		console.log('oh no, it failed ;_;');
-		return;
-	}
-
-	console.log(postcode);
-});
-```
-
 Not found (404) responses from the API are not considered errors. Instead, the
 output will be `null`.
 
 ```js
-postcodes.lookup('F4K3AA', function (error, postcode) {
-	console.log(error);
-	// null
-
+postcodes.lookup('F4K3AA').then(postcode => {
 	console.log(postcode);
 	// null
 });
 ```
 
-Both promises ([Promises/A+](//promisesaplus.com)) and callbacks are supported.
-The following two sections specify exactly how you can apply promises or
-callbacks to the reference below.
+Only Promises ([Promises/A+](//promisesaplus.com)) are supported - callbacks
+are not. The following two sections specify exactly how you can apply Promises
+to the reference below.
 
 ### Promises
 
@@ -104,22 +84,6 @@ postcodes
 - `parameters` - any arguments specific to that method (see [Methods](#methods))
 - `error` - instance of `Error`
 - `outputs` - any outputs for that method (see [Methods](#methods))
-
-Both `parameters` and `outputs` can mean zero, one, or many arguments. These are
-specified for each method.
-
-### Callbacks
-
-```js
-postcodes.method(parameters..., function (error, outputs...) {
-
-});
-```
-
-- `method` - the method you want to call
-- `parameters` - any arguments specific to that method (see [Methods](#methods))
-- `error` - null if successful, instance of `Error` if failed
-- `outputs` - undefined if failed, any outputs for that method (see [Methods](#methods))
 
 Both `parameters` and `outputs` can mean zero, one, or many arguments. These are
 specified for each method.
