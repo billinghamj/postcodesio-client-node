@@ -16,7 +16,6 @@
     "test-travis": "istanbul cover test/index.js --report lcovonly"
   },
   "dependencies": {
-    "object-merge": "^2.5.1",
     "postcode": "^0.2.5",
     "q": "^1.5.0"
   },
