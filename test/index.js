@@ -1,7 +1,7 @@
-var test = require('tape');
-var PostcodesIO = require('../lib');
+const test = require('tape');
+const PostcodesIO = require('../lib');
 
-test('correct types exported', function (t) {
+test('correct types exported', t => {
 	t.equal(typeof PostcodesIO, 'function');
 	t.equal(typeof PostcodesIO.prototype.lookup, 'function');
 	t.equal(typeof PostcodesIO.prototype.lookupOutcode, 'function');
@@ -16,8 +16,8 @@ test('correct types exported', function (t) {
 	t.end();
 });
 
-test('correct types after initialization', function (t) {
-	var client = new PostcodesIO();
+test('correct types after initialization', t => {
+	const client = new PostcodesIO();
 
 	t.assert(client instanceof PostcodesIO);
 	t.equal(typeof client.lookup, 'function');
@@ -33,55 +33,38 @@ test('correct types after initialization', function (t) {
 	t.end();
 });
 
-test('correct types after calling as function', function (t) {
-	var client = PostcodesIO();
-
-	t.assert(client instanceof PostcodesIO);
-	t.equal(typeof client.lookup, 'function');
-	t.equal(typeof client.lookupPostcode, 'function');
-	t.equal(typeof client.lookupOutcode, 'function');
-	t.equal(typeof client.near, 'function');
-	t.equal(typeof client.nearCoordinate, 'function');
-	t.equal(typeof client.nearPostcode, 'function');
-	t.equal(typeof client.reverseGeocode, 'function');
-	t.equal(typeof client.validate, 'function');
-	t.equal(typeof client.random, 'function');
-
-	t.end();
-});
-
-test('default options set after initialization', function (t) {
-	var client = new PostcodesIO();
+test('default options set after initialization', t => {
+	const client = new PostcodesIO();
 
 	t.notEqual(client.options, null);
 	t.equal(client.options.secure, true);
 	t.equal(client.options.hostname, 'api.postcodes.io');
 	t.equal(client.options.port, '443');
-	t.deepEqual(client.options.headers, { 'Accept': 'application/json' });
+	t.deepEqual(client.options.headers, { accept: 'application/json' });
 
 	t.end();
 });
 
-test('with custom base URL', function(t) {
-	var client = new PostcodesIO('http://example.com:8246');
+test('with custom base URL', t => {
+	const client = new PostcodesIO('http://example.com:8246');
 
 	t.notEqual(client.options, null);
 	t.deepEqual(client.options, {
 		secure: false,
 		hostname: 'example.com',
 		port: '8246',
-		headers: { Accept: 'application/json' },
+		headers: { accept: 'application/json' },
 	});
 
 	t.end();
 });
 
-test('correct headers after initialization with custom headers', function (t) {
-	var opts = {
-		headers: { 'Authorization': 'Bearer foobar' }
+test('correct headers after initialization with custom headers', t => {
+	const opts = {
+		headers: { authorization: 'Bearer foobar' },
 	};
 
-	var client = new PostcodesIO(null, opts);
+	const client = new PostcodesIO(null, opts);
 
 	t.notEqual(client.options, null);
 
@@ -90,16 +73,16 @@ test('correct headers after initialization with custom headers', function (t) {
 		hostname: 'api.postcodes.io',
 		port: '443',
 		headers: {
-			Accept: 'application/json',
-			Authorization: 'Bearer foobar',
+			accept: 'application/json',
+			authorization: 'Bearer foobar',
 		},
 	});
 
 	t.end();
 });
 
-test('promise returned by all methods', function (t) {
-	var client = new PostcodesIO();
+test('promise returned by all methods', t => {
+	const client = new PostcodesIO();
 
 	t.equal(typeof client.lookup('EC1V 9LB').then, 'function');
 	t.equal(typeof client.lookup('EC1V').then, 'function');
