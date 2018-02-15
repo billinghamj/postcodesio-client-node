@@ -1,6 +1,6 @@
 {
   "name": "postcodesio-client",
-  "version": "0.3.0",
+  "version": "0.3.2",
   "description": "Abstracts access to the Postcodes.io API",
   "homepage": "https://github.com/billinghamj/postcodesio-client-node",
   "bugs": "https://github.com/billinghamj/postcodesio-client-node/issues",
@@ -16,7 +16,7 @@
     "test-travis": "istanbul cover test/index.js --report lcovonly"
   },
   "dependencies": {
-    "json-client": "^0.8.4",
+    "json-client": "^0.8.5",
     "postcode": "^0.2.5"
   },
   "devDependencies": {
