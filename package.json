@@ -1,6 +1,6 @@
 {
   "name": "postcodesio-client",
-  "version": "0.3.3",
+  "version": "0.3.4",
   "description": "Abstracts access to the Postcodes.io API",
   "homepage": "https://github.com/billinghamj/postcodesio-client-node",
   "bugs": "https://github.com/billinghamj/postcodesio-client-node/issues",
