@@ -21,7 +21,7 @@
   },
   "devDependencies": {
     "coveralls": "^3.1.0",
-    "istanbul": "^0.3.5",
+    "istanbul": "^0.4.5",
     "tape": "^5.0.1"
   },
   "keywords": [
